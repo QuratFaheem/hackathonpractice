@@ -1,6 +1,18 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import Productlist from "@/components/productlist";
+import Landingpage from "@/components/landingpage";
+import SideMenue from "@/components/sidemenue";
+import FlexboxContainer from "@/components/flexboxcontainer";
+import BestSell from "@/components/BestSell";
+import CategoriesLpage from "@/components/categoriesLandpage";
+import OurProducts from "@/components/ourProducts";
+import MoreProduct from "@/components/moreproduct";
+import NewArrival from "@/components/newArrival";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +40,26 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Header />
+        <SideMenue />
+        <Landingpage />
+        <Productlist />
+        <FlexboxContainer />
+        <div>
+        <hr className="mt-6"></hr>
+</div>
+        <BestSell />
+        <CategoriesLpage />
+        <OurProducts />  
+        <MoreProduct />
+        <div className="flex justify-center items-center mt-11">
+  <button className="mt-2 px-11 py-2 bg-red-500 text-white hover:bg-red-800">
+    View All Products
+  </button>
+</div>  
+<NewArrival />
         {children}
+        <Footer />
       </body>
     </html>
   );
